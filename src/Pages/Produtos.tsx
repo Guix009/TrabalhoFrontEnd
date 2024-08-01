@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
@@ -42,7 +42,7 @@ export function Get() {
 
   async function excluirProduto(pro_cod: number) {
     try {
-      // Exibir uma caixa de confirmação antes de excluir
+ 
       const result = await Swal.fire({
         title: 'Tem certeza?',
         text: "Você não poderá reverter essa ação!",
