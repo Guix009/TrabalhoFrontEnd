@@ -1,21 +1,14 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
-type Produto = {
-  pro_cod?: number;
-  pro_nome: string;
-  pro_descri: string;
-  pro_qtda: number;
-  pro_fabricante: string;
-};
 
 export function Post() {
-  const [nome, setNome] = useState<string>('');
-  const [descri, setDescri] = useState<string>('');
-  const [qtda, setQtda] = useState<string>('');
-  const [fabricante, setFabricante] = useState<string>('');
+  const [nome, setNome] = useState('');
+  const [descri, setDescri] = useState('');
+  const [qtda, setQtda] = useState('');
+  const [fabricante, setFabricante] = useState('');
 
   const API_CLI = axios.create({
     baseURL: 'https://trabalhobackend-1.onrender.com/'
@@ -32,7 +25,6 @@ export function Post() {
         pro_fabricante: fabricante,
       });
 
-      // Mostrar um alerta de sucesso
       Swal.fire({
         icon: 'success',
         title: 'Produto cadastrado com sucesso!',
